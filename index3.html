@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+
+
+
+    </head>
+    <body>
+
+        <div id="app">
+          <form action="done.html" v-on:submit="handleIt">
+            <button type="submit">
+              Submit Me!
+            </button>
+          </form>
+
+        </div>
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.4/vue.min.js"></script>
+        <script>
+            new Vue({
+              el: '#app',
+
+              methods: {
+                handleIt(e) {
+                  alert('hey');
+                  e.preventDefault();
+                }
+              }
+
+            })
+
+        </script>
+
+    </body>
+</html>
