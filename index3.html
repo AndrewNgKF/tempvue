@@ -5,34 +5,41 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-
-
-
+        <title>hey</title>
     </head>
     <body>
 
         <div id="app">
-          <form action="done.html" v-on:submit="handleIt">
+          <form action="done.html" @submit.prevent="handleIt">
             <button type="submit">
               Submit Me!
             </button>
+
+
           </form>
 
+          <button @click="increase">
+            Increment Counter: {{ count }}
+          </button>
         </div>
 
         <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.4/vue.min.js"></script>
         <script>
             new Vue({
               el: '#app',
-
+              data: {
+                count: 0
+              },
               methods: {
-                handleIt(e) {
+                handleIt: function() {
                   alert('hey');
-                  e.preventDefault();
-                }
-              }
+                  // e.preventDefault();
+                },
+                increase: function() {
+                  this.count += 1;
+                },
 
+              }
             })
 
         </script>
